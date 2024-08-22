@@ -11,13 +11,24 @@ class UserListTest {
     @DisplayName("User should be found in UserList")
     public void testUserListFindUser() {
         // TODO: add 3 users to UserList
+        UserList userList = new UserList();
+
+        userList.addUser("John", "123");
+        userList.addUser("Jane", "456");
+        userList.addUser("Jack", "789");
+        User user = new User("John", "123");
 
         // TODO: find one of them
+
+        User foundUser = userList.findUserByUsername("John");
 
         // TODO: assert that UserList found User
         // String expected = "<one of username>";
         // String actual = user.getUsername();
         // assertEquals(expected, actual);
+        String expected = foundUser.getUsername();
+        String actual = "John";
+        assertEquals(expected, actual);
     }
 
     @Test
